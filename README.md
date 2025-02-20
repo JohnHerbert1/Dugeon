@@ -1,0 +1,2 @@
+# Dugeon
+ Desafie-se em um jogo de batalhas por turnos, com sistema simples de classes e RPG. Explore uma masmorra repleta de riquezas, onde a morte é quase certa a cada passo. Enfrente monstros aterradores e os desafios impostos pelas maldições que assombram este lugar. Apenas os mais corajosos e astutos sobreviverão. Prepare-se para testar seus limites e conquistar tesouros ou perder sua alma na escuridão.
