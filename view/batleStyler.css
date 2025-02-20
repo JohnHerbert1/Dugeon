@@ -1,0 +1,65 @@
+
+#turnIndicator {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#gameContainer {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#actionsContainer {
+    width: 960px;
+    margin: 20px auto;
+    background: #222;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#playerActions {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+#combatLog {
+    width: 60%;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+/* Painel de feitiços (magia) */
+#magicOptionsPanel {
+    display: none;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#magicOptionsPanel .spellButton {
+    padding: 6px 12px;
+    background: #777;
+    border: none;
+    color: #eee;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#magicOptionsPanel .spellButton:hover {
+    background: #888;
+}
