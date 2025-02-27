@@ -2,48 +2,60 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Shadow Tumb</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='batleStyler.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS de estilo da batalha -->
+    <link rel="stylesheet" type="text/css" media="screen" href="batleStyler.css">
 </head>
 
 <body>
-    <div class="turnIndicatior"></div>
-    <div id="gameContainer">
-        <div id="enemySide">
-            <!-- Inimigos serão exibidos aqui -->
-        </div>
-        <div id="playerSide">
-            <!-- Personagens do jogador serão exibidos aqui -->
+    <!-- Indicador de turno / Ações -->
+    <div class="topUI">
+        <div class="turnIndicatior">Turno: <span id="turnCount">1</span></div>
+        <!-- Botões para trocar o alvo (setas) -->
+        <div class="targetControls">
+            <button id="prevTarget">&larr;</button>
+            <span id="selectedTargetName"></span>
+            <button id="nextTarget">&rarr;</button>
         </div>
     </div>
+
+    <!-- Container principal do jogo -->
+    <div id="gameContainer">
+        <!-- Lado esquerdo: Inimigos -->
+        <div id="enemySide"></div>
+        <!-- Lado direito: Personagens do jogador -->
+        <div id="playerSide"></div>
+    </div>
+
+    <!-- Menu de ações do jogador -->
     <div class="actionContainer">
         <div class="playerAction">
-            <div class="atack">atack</div>
-            <div class="magic">magia</div>
-            <div class="defende">defender</div>
-            <div class="item">items</div>
+            <button class="atack" id="btnAttack">Attack</button>
+            <button class="magic" id="btnMagic">Magic</button>
+            <button class="defende" id="btnDefend">Defend</button>
+            <button class="item" id="btnItem">Items</button>
         </div>
-
-        <div class="actionRow" id="targetRow">
-            <label for="targetSelect">Alvo:</label>
-            <select id="targetSelect"></select>
-        </div>
-
-        <div id="magicOptionsPanel">
-            <div class="actionRow">
-                <span>Escolha um Feitiço:</span>
-            </div>
-            <div class="actionRow" id="spellButtons"></div>
-            <div class="actionRow">
-                <button class="actionButton" id="cancelMagic">Cancelar</button>
-            </div>
-        </div>
-    </div id="combatLog">
     </div>
-    <script src='main.js'></script>
+
+    <!-- Painel de Magias (opcional) -->
+    <div id="magicOptionsPanel" style="display: none;">
+        <div class="actionRow">
+            <span>Escolha um Feitiço:</span>
+        </div>
+        <div class="actionRow" id="spellButtons"></div>
+        <div class="actionRow">
+            <button class="actionButton" id="cancelMagic">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Log de combate -->
+    <div id="combatLog"></div>
+
+    <!-- Script principal do jogo -->
+    <script src="/script/game.js"></script>
 </body>
 
 </html>

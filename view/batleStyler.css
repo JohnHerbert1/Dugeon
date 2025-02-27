@@ -1,65 +1,137 @@
-
-#turnIndicator {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-#gameContainer {
-    width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #222;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container principal */
+  body {
+    background: #2c2c2c url("https://via.placeholder.com/800x600/333/777?text=BG") no-repeat center center;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  /* Top UI (indicador de turno, seleção de alvo) */
+  .topUI {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-}
-
-#actionsContainer {
-    width: 960px;
-    margin: 20px auto;
-    background: #222;
+    align-items: center;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#playerActions {
+    background-color: rgba(0,0,0,0.6);
+  }
+  .turnIndicatior {
+    font-size: 1.2rem;
+  }
+  .targetControls button {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .targetControls span {
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  /* Container do jogo */
+  #gameContainer {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  /* Lado esquerdo: Inimigos */
+  #enemySide {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    width: 35%;
-}
-
-#combatLog {
-    width: 60%;
-    background: #333;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  /* Lado direito: Heróis */
+  #playerSide {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  /* Estilo para personagens e inimigos */
+  .character, .enemy {
+    background-color: rgba(0,0,0,0.5);
     padding: 10px;
+    margin: 5px;
+    border: 1px solid #aaa;
     border-radius: 5px;
-    height: 150px;
-    overflow-y: auto;
-    font-size: 14px;
-}
-
-/* Painel de feitiços (magia) */
-#magicOptionsPanel {
-    display: none;
-    background: #444;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-#magicOptionsPanel .spellButton {
-    padding: 6px 12px;
-    background: #777;
-    border: none;
-    color: #eee;
-    margin: 4px;
+    text-align: center;
+    width: 120px;
     cursor: pointer;
-    border-radius: 4px;
-}
-
-#magicOptionsPanel .spellButton:hover {
-    background: #888;
-}
+    position: relative;
+  }
+  
+  /* Exemplo de sprite: substitua por suas imagens */
+  .character::before {
+    content: url('https://via.placeholder.com/60x60/ffcc00/000?text=Hero');
+    display: block;
+    margin: 0 auto;
+  }
+  .enemy::before {
+    content: url('https://via.placeholder.com/60x60/cc0000/fff?text=Enemy');
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Realce no inimigo selecionado */
+  .enemy.selected {
+    outline: 2px solid yellow;
+  }
+  
+  /* Menu de ações */
+  .actionContainer {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+    padding: 10px;
+  }
+  .playerAction button {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #999;
+    cursor: pointer;
+  }
+  
+  /* Painel de magias (exemplo) */
+  #magicOptionsPanel {
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 10px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 5px;
+  }
+  
+  /* Log de combate */
+  #combatLog {
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    height: 100px;
+    overflow-y: auto;
+    margin: 10px;
+  }
+  
